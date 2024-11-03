@@ -1,57 +1,84 @@
 {
-  "last_node_id": 51,
+  "last_node_id": 52,
   "last_link_id": 84,
   "nodes": [
     {
       "id": 9,
       "type": "ADE_AnimateDiffUniformContextOptions",
-      "pos": [
-        197,
-        187
-      ],
+      "pos": {
+        "0": 197,
+        "1": 187
+      },
       "size": {
         "0": 315,
-        "1": 154
+        "1": 270
       },
       "flags": {},
       "order": 0,
       "mode": 0,
+      "inputs": [
+        {
+          "name": "prev_context",
+          "type": "CONTEXT_OPTIONS",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "view_opts",
+          "type": "VIEW_OPTS",
+          "link": null,
+          "shape": 7
+        }
+      ],
       "outputs": [
         {
-          "name": "CONTEXT_OPTIONS",
+          "name": "CONTEXT_OPTS",
           "type": "CONTEXT_OPTIONS",
           "links": [
             1
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "ADE_AnimateDiffUniformContextOptions"
+        "Node name for S&R": "ADE_AnimateDiffUniformContextOptions",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
       },
       "widgets_values": [
         16,
         1,
         4,
         "uniform",
-        false
-      ]
+        false,
+        "flat",
+        false,
+        0,
+        1,
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 2,
       "type": "CheckpointLoaderSimpleWithNoiseSelect",
-      "pos": [
-        228,
-        -36
-      ],
+      "pos": {
+        "0": 228,
+        "1": -36
+      },
       "size": {
         "0": 319.20001220703125,
-        "1": 122
+        "1": 170
       },
       "flags": {},
       "order": 1,
       "mode": 0,
+      "inputs": [],
       "outputs": [
         {
           "name": "MODEL",
@@ -59,8 +86,8 @@
           "links": [
             35
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         },
         {
           "name": "CLIP",
@@ -68,8 +95,8 @@
           "links": [
             37
           ],
-          "shape": 3,
-          "slot_index": 1
+          "slot_index": 1,
+          "shape": 3
         },
         {
           "name": "VAE",
@@ -79,20 +106,29 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "CheckpointLoaderSimpleWithNoiseSelect"
+        "Node name for S&R": "CheckpointLoaderSimpleWithNoiseSelect",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
       },
       "widgets_values": [
         "samaritan3dCartoon_v10.safetensors",
-        "sqrt_linear (AnimateDiff)"
-      ]
+        "sqrt_linear (AnimateDiff)",
+        false,
+        0.18215
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 26,
       "type": "ADE_AnimateDiffLoRALoader",
-      "pos": [
-        227,
-        -236
-      ],
+      "pos": {
+        "0": 227,
+        "1": -236
+      },
       "size": {
         "0": 355.20001220703125,
         "1": 82
@@ -104,7 +140,8 @@
         {
           "name": "prev_motion_lora",
           "type": "MOTION_LORA",
-          "link": null
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -112,8 +149,8 @@
           "name": "MOTION_LORA",
           "type": "MOTION_LORA",
           "links": [],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
@@ -121,7 +158,8 @@
       },
       "widgets_values": [
         "v2_lora_ZoomIn.ckpt",
-        0.8320000000000001
+        0.8320000000000001,
+        ""
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -129,10 +167,10 @@
     {
       "id": 32,
       "type": "LoraLoader",
-      "pos": [
-        641,
-        1
-      ],
+      "pos": {
+        "0": 641,
+        "1": 1
+      },
       "size": {
         "0": 315,
         "1": 126
@@ -159,8 +197,8 @@
           "links": [
             36
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         },
         {
           "name": "CLIP",
@@ -169,29 +207,36 @@
             38,
             39
           ],
-          "shape": 3,
-          "slot_index": 1
+          "slot_index": 1,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "LoraLoader"
+        "Node name for S&R": "LoraLoader",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
       },
       "widgets_values": [
         "3DMM_V12.safetensors",
         0,
         1
-      ]
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 50,
       "type": "VHS_VideoCombine",
-      "pos": [
-        3080,
-        1030
-      ],
+      "pos": {
+        "0": 3080,
+        "1": 1030
+      },
       "size": {
         "0": 315,
-        "1": 507
+        "1": 238
       },
       "flags": {},
       "order": 15,
@@ -201,12 +246,30 @@
           "name": "images",
           "type": "IMAGE",
           "link": 70
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
         {
-          "name": "GIF",
-          "type": "GIF",
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
           "links": null,
           "shape": 3
         }
@@ -214,14 +277,20 @@
       "properties": {
         "Node name for S&R": "VHS_VideoCombine"
       },
-      "widgets_values": [
-        8,
-        0,
-        "aaa_readme_up",
-        "image/gif",
-        false,
-        true
-      ],
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "aaa_readme_up",
+        "format": "image/gif",
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {},
+          "muted": false
+        }
+      },
       "color": "#223",
       "bgcolor": "#335"
     },
@@ -232,10 +301,10 @@
         1154,
         -320
       ],
-      "size": {
-        "0": 487.51580810546875,
-        "1": 427.2096252441406
-      },
+      "size": [
+        487.51580810546875,
+        427.2096252441406
+      ],
       "flags": {},
       "order": 9,
       "mode": 0,
@@ -254,8 +323,8 @@
             66,
             76
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
@@ -275,10 +344,10 @@
     {
       "id": 7,
       "type": "CLIPTextEncode",
-      "pos": [
-        1075,
-        178
-      ],
+      "pos": {
+        "0": 1075,
+        "1": 178
+      },
       "size": {
         "0": 400,
         "1": 200
@@ -302,8 +371,8 @@
             67,
             77
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
@@ -318,10 +387,10 @@
     {
       "id": 49,
       "type": "VAEDecode",
-      "pos": [
-        3070,
-        940
-      ],
+      "pos": {
+        "0": 3070,
+        "1": 940
+      },
       "size": {
         "0": 210,
         "1": 46
@@ -349,21 +418,29 @@
           "links": [
             70
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "VAEDecode"
-      }
+        "Node name for S&R": "VAEDecode",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 20,
       "type": "VAEDecode",
-      "pos": [
-        2059,
-        273
-      ],
+      "pos": {
+        "0": 2059,
+        "1": 273
+      },
       "size": {
         "0": 210,
         "1": 46
@@ -390,21 +467,29 @@
           "links": [
             13
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "VAEDecode"
-      }
+        "Node name for S&R": "VAEDecode",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 51,
       "type": "KSampler",
-      "pos": [
-        2748,
-        832
-      ],
+      "pos": {
+        "0": 2748,
+        "1": 832
+      },
       "size": {
         "0": 315,
         "1": 262
@@ -441,12 +526,17 @@
           "links": [
             74
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "KSampler"
+        "Node name for S&R": "KSampler",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
       },
       "widgets_values": [
         147322096305584,
@@ -456,21 +546,23 @@
         "euler",
         "normal",
         0.65
-      ]
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 47,
       "type": "LatentUpscaleBy",
-      "pos": [
-        2374,
-        1108
-      ],
+      "pos": {
+        "0": 2374,
+        "1": 1108
+      },
       "size": {
         "0": 315,
         "1": 82
       },
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
@@ -486,28 +578,35 @@
           "links": [
             75
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "LatentUpscaleBy"
+        "Node name for S&R": "LatentUpscaleBy",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
       },
       "widgets_values": [
         "nearest-exact",
         1.5
-      ]
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 8,
       "type": "ADE_AnimateDiffLoaderWithContext",
-      "pos": [
-        1077,
-        431
-      ],
+      "pos": {
+        "0": 1077,
+        "1": 431
+      },
       "size": {
         "0": 315,
-        "1": 122
+        "1": 230
       },
       "flags": {},
       "order": 7,
@@ -521,12 +620,32 @@
         {
           "name": "context_options",
           "type": "CONTEXT_OPTIONS",
-          "link": 1
+          "link": 1,
+          "shape": 7
         },
         {
           "name": "motion_lora",
           "type": "MOTION_LORA",
-          "link": null
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "ad_settings",
+          "type": "AD_SETTINGS",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "sample_settings",
+          "type": "SAMPLE_SETTINGS",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "ad_keyframes",
+          "type": "AD_KEYFRAMES",
+          "link": null,
+          "shape": 7
         }
       ],
       "outputs": [
@@ -537,25 +656,34 @@
             60,
             78
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "ADE_AnimateDiffLoaderWithContext"
+        "Node name for S&R": "ADE_AnimateDiffLoaderWithContext",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
       },
       "widgets_values": [
         "mm-Stabilized_mid.pth",
-        "sqrt_linear (AnimateDiff)"
-      ]
+        "sqrt_linear (AnimateDiff)",
+        1,
+        true
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 18,
       "type": "AnimateDiffCombine",
-      "pos": [
-        2438,
-        -283
-      ],
+      "pos": {
+        "0": 2438,
+        "1": -283
+      },
       "size": {
         "0": 420.88818359375,
         "1": 940.2456665039062
@@ -570,8 +698,14 @@
           "link": 13
         }
       ],
+      "outputs": [],
       "properties": {
-        "Node name for S&R": "AnimateDiffCombine"
+        "Node name for S&R": "AnimateDiffCombine",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
       },
       "widgets_values": [
         8,
@@ -580,22 +714,25 @@
         "animate_diff",
         "video/h264-mp4",
         false
-      ]
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 24,
       "type": "EmptyLatentImage",
-      "pos": [
-        1552,
-        662
-      ],
+      "pos": {
+        "0": 1552,
+        "1": 662
+      },
       "size": {
         "0": 315,
         "1": 106
       },
       "flags": {},
-      "order": 3,
+      "order": 4,
       "mode": 0,
+      "inputs": [],
       "outputs": [
         {
           "name": "LATENT",
@@ -603,26 +740,33 @@
           "links": [
             40
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "EmptyLatentImage"
+        "Node name for S&R": "EmptyLatentImage",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
       },
       "widgets_values": [
         360,
         640,
         70
-      ]
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 17,
       "type": "KSampler",
-      "pos": [
-        1935,
-        596
-      ],
+      "pos": {
+        "0": 1935,
+        "1": 596
+      },
       "size": {
         "0": 315,
         "1": 262
@@ -659,12 +803,17 @@
           "links": [
             12
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "KSampler"
+        "Node name for S&R": "KSampler",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
       },
       "widgets_values": [
         147322096305584,
@@ -674,22 +823,25 @@
         "euler",
         "normal",
         1
-      ]
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     },
     {
       "id": 3,
       "type": "VAELoader",
-      "pos": [
-        2030,
-        965
-      ],
+      "pos": {
+        "0": 2030,
+        "1": 965
+      },
       "size": {
         "0": 315,
         "1": 58
       },
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
+      "inputs": [],
       "outputs": [
         {
           "name": "VAE",
@@ -698,16 +850,49 @@
             79,
             80
           ],
-          "shape": 3,
-          "slot_index": 0
+          "slot_index": 0,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "VAELoader"
+        "Node name for S&R": "VAELoader",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
       },
       "widgets_values": [
         "vae-ft-mse-840000-ema-pruned.ckpt"
-      ]
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 52,
+      "type": "Note",
+      "pos": {
+        "0": 194,
+        "1": 504
+      },
+      "size": [
+        428.3999938964844,
+        58
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "https://github.com/kingmateo/Comfy_UI_WORKFLOW_LIST",
+      "properties": {},
+      "widgets_values": [
+        "https://github.com/kingmateo/Comfy_UI_WORKFLOW_LIST\nhttps://t.me/AHYVFX"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -874,6 +1059,14 @@
   ],
   "groups": [],
   "config": {},
-  "extra": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8264462809917356,
+      "offset": [
+        818.280282208246,
+        -68.72805270589193
+      ]
+    }
+  },
   "version": 0.4
 }
